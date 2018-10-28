@@ -47,14 +47,8 @@ public class GreetingPluginTest {
     }
 
     private void writeFile(File destination, String content) throws IOException {
-        BufferedWriter output = null;
-        try {
-            output = new BufferedWriter(new FileWriter(destination));
+        try (BufferedWriter output = new BufferedWriter(new FileWriter(destination))) {
             output.write(content);
-        } finally {
-            if (output != null) {
-                output.close();
-            }
         }
     }
 }
