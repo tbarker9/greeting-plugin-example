@@ -2,8 +2,17 @@ plugins {
     id 'java-gradle-plugin'
 }
 
+repositories {
+    jcenter()
+}
+
 group = 'org.samples.greeting'
 version = '0.1'
+
+dependencies {
+    testCompile gradleTestKit()
+    testCompile 'junit:junit:4.12'
+}
 
 gradlePlugin {
     plugins {
